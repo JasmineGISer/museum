@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/map.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <script type="text/javascript" src="libs/jquery.min.js"></script>
+    <script src="js/map.js"></script>
+</head>
+<body>
+<div class="mapContainer" style="z-index: -1;">
+    <!--<div class="mapLabels">-->
+    <!--<p>Agriculture</p>-->
+    <!--<p>Exhibition Hall</p>-->
+    <!--<p>Your Place in Time</p>-->
+    <!--<p>Fully Furnished</p>-->
+    <!--<p>Made in America</p>-->
+    <!--<p>Liberty &amp; Justice</p>-->
+    <!--<p>Heroes of the Sky</p>-->
+    <!--<p>Driving America</p>-->
+    <!--<p>Transportation</p>-->
+    <!--</div>-->
+
+    <div class="map">
+        <canvas id="canvas" style="z-index: 100;"></canvas>
+        <div class="button-wrapper xc" id="yd">
+            <a href="#popup1"><div class="button"></div></a>
+        </div>
+        <div class="button-wrapper xk" id="nfm">
+            <a href="#popup1"><div class="button"></div></a>
+        </div>
+        <div class="button-wrapper ck" id="kq">
+            <a href="#popup1"><div class="button"></div></a>
+        </div>
+        <div class="button-wrapper xc" id="jas">
+            <a href="#popup1"><div class="button"></div></a>
+        </div>
+        <div class="button-wrapper xc" id="jet">
+            <a href="#popup1"><div class="button"></div></a>
+        </div>
+        <div class="button-wrapper xk" id="as">
+            <a href="#popup1"><div class="button"></div></a>
+        </div>
+        <div class="button-wrapper ck" id="sd">
+            <a href="#popup1"><div class="button"></div></a>
+        </div>
+
+        <div id="popup1" class="overlay">
+            <a class="overlay-close" href="#">x</a>
+            <section id='carousel-wrapper'>
+
+                <!--images-->
+                <div id='image-1' class='image'></div>
+                <div id='image-2' class='image'></div>
+                <div id='image-3' class='image'></div>
+                <div id='image-4' class='image'></div>
+                <div id='image-5' class='image'>
+                    <img src="img/hand.jpg">
+                </div>
+                <div id='image-6' class='image'></div>
+                <div id='image-7' class='image'></div>
+                <div id='image-8' class='image'></div>
+                <div id='image-9' class='image'></div>
+                <div id='image-10' class='image'></div>
+
+            </section>
+            <div class="popup-wrap">
+                <div class="popup-box">
+                    <div style="width: 100%;height: 100%;">
+                        <div id="bb" class="box box1 shadow1">
+                            <img src="img/hand.jpg">
+                            <p>捐献者：伟大的某某某</p>
+                            <p>制作者：伟大的某某某</p>
+                        </div>
+                        <div id="mx">
+                            <script src="https://developer.biodigital.com/builds/api/2/human-api.min.js" defer></script>
+                            <iframe
+                                    id="embedded-human"
+                                    frameBorder="0"
+                                    width="800"
+                                    height="600"
+                                    allowFullScreen="true"
+                                    src="https://human.biodigital.com/widget?m=muscleCross&camera=4.92,-0.218,6.43,-0.265,0.076,-0.691,-0.026,0.999,0.026&background=245,245,245,245,245,245&dk=92fd078e4c4a38a737e9511b38aabaeb8d4875b1">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <a class="close-btn popup-close" href="#">x</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--<script type="text/javascript">-->
+    <!--var images = document.getElementsByClassName('image');-->
+    <!--var carouselWrapper = document.getElementById('carousel-wrapper');-->
+    <!--var selected = 6;-->
+    <!--var i;-->
+    <!--var l;-->
+
+    <!--//set initial selected element-->
+    <!--document.location.hash = '#image-6';-->
+
+    <!--for(i = 0, l = images.length; i < l; i++) {-->
+
+        <!--images[i].addEventListener('click', function(e){-->
+
+            <!--var imageId = e.target.id;-->
+            <!--var imageNum = imageId.split('-')[1];-->
+            <!--var difference = imageNum - selected;-->
+            <!--var position = parseInt(document.defaultView.getComputedStyle(carouselWrapper).marginLeft);-->
+
+            <!--carouselWrapper.style.marginLeft = position - (difference * 350) + 'px';-->
+            <!--selected = imageNum;-->
+
+        <!--});-->
+    <!--}-->
+    <!--$(document).ready(function() {-->
+        <!--$('.image').click(function(e) {-->
+            <!--$('.popup-wrap').fadeIn(250);-->
+            <!--$('.popup-box').removeClass('transform-out').addClass('transform-in');-->
+
+            <!--e.preventDefault();-->
+        <!--});-->
+
+        <!--$('.popup-close').click(function(e) {-->
+            <!--$('.popup-wrap').fadeOut(500);-->
+            <!--$('.popup-box').removeClass('transform-in').addClass('transform-out');-->
+
+            <!--e.preventDefault();-->
+        <!--});-->
+    <!--});-->
+
+    <!--var oDiv=document.getElementById('popup1');-->
+    <!--oDiv.onmousedown=function(ev){-->
+        <!--var disX=ev.clientX-oDiv.offsetLeft;-->
+        <!--var disY=ev.clientY-oDiv.offsetTop;-->
+
+        <!--document.onmousemove=function(ev){-->
+            <!--if(oDiv.offsetLeft>0&&oDiv.offsetRight>0){-->
+                <!--var l=ev.clientX-disX;-->
+                <!--oDiv.style.left=l+'px';-->
+            <!--}-->
+
+        <!--}-->
+        <!--document.onmouseup=function(){-->
+            <!--document.onmousemove=null;-->
+            <!--document.onmouseup=null;-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+</body>
+</html>
